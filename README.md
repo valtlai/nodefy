@@ -18,22 +18,14 @@ Add this in `package.json`:
 
 ```json
 "scripts": {
-  "prepack": "deno run --unstable --allow-read=. --allow-write=. .build.js"
+  "prepack": "deno run --unstable --allow-read=. --allow-write=. https://raw.githubusercontent.com/valtlai/nodefy/2.0.0/do.js"
 },
 ```
 
-Create a `.build.js` file with the following:
+Add a comment before each external import
+containing the name of the npm package used to replace the Deno module URL:
 
 ```js
-import build from "https://raw.githubusercontent.com/valtlai/nodefy/1.0.0/mod.js";
-
-build([
-  "https://deno.land/x/MODULE_NAME@1.0.0/mod.js",
-  "NPM_PACKAGE_NAME",
-]);
+// node(NPM_PACKAGE_NAME)
+import myModule from "https://deno.land/x/MODULE_NAME@1.0.0/mod.js";
 ```
-
-The function takes one or more arrays as arguments.
-Each array consists of two values,
-where the first one is the URL of a Deno module to be replaced
-with the second value, the name of a npm package.
