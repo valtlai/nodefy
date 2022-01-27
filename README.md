@@ -18,7 +18,7 @@ Add this in `package.json`:
 
 ```json
 "scripts": {
-  "prepack": "deno run --unstable --allow-read=. --allow-write=. https://raw.githubusercontent.com/valtlai/nodefy/2.0.0/do.js"
+  "prepack": "deno run --unstable --allow-read=. --allow-write=. https://raw.githubusercontent.com/valtlai/nodefy/2.0.1/do.js"
 },
 ```
 
