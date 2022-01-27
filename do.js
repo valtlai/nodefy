@@ -1,4 +1,4 @@
-import { expandGlob } from "https://deno.land/std@0.97.0/fs/mod.ts";
+import { expandGlob } from "https://deno.land/std@0.122.0/fs/mod.ts";
 
 const processJs = (name) =>
   Deno.readTextFile(`${name}.js`).then((input) => {
